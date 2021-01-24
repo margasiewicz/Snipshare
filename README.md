@@ -5,7 +5,7 @@ Klonowanie repozytorium i zapewnienie zgodności lokalnego mastera:
 ```bash
 git clone https://github.com/margasiewicz/Snipshare.git
 git pull origin master
-cd <directory path>
+cd <ścieżka do repozytorium>
 ```
 #### Tworzenie wirtualnego środowiska
 ###### Windows
@@ -14,17 +14,17 @@ py -m venv <venv_name>
 ```
 ###### Linux
 ```bash
-python3 -m venv <venv_name>
+python3 -m venv <wybrana_nazwa>
 ```
 #### Aktywacja wirtualnego środowiska oraz instalacja potrzebnych bibliotek
 ###### Windows
 ```bash
-<venv_name>\Scripts\activate.bat
+<wybrana_nazwa>\Scripts\activate.bat
 pip install -r requirements.txt
 ```
 ###### Linux
 ```bash
-source <venv_name>/bin/activate
+source <wybrana_nazwa>/bin/activate
 pip install -r requirements
 ```
 #### Uruchomienie
