@@ -1,7 +1,7 @@
 # Snipshare
 Repozytorium backendowe projektu zespołowego zespołu MAK
 #### Instalacja
-Klonowanie repozytorium i zapewnienie zgodności lokalnego mastera:
+Klonowanie repozytorium
 ```bash
 git clone https://github.com/margasiewicz/Snipshare.git
 cd Snipshare
