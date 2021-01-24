@@ -29,8 +29,16 @@ pip3 install -r requirements.txt
 source myenv/bin/activate
 pip3 install -r requirements
 ```
-#### Uruchomienie
+#### Inicjowanie bazy danych
 ```bash
-python3 run.py
+python
+from apka import db
+from apka.models import Message, User, Room
+db.create_all()
+exit()
+```
+#### Uruchomienie aplikacji
+```bash
+python run.py
 ```
 
