@@ -4,31 +4,33 @@ Repozytorium backendowe projektu zespołowego zespołu MAK
 Klonowanie repozytorium i zapewnienie zgodności lokalnego mastera:
 ```bash
 git clone https://github.com/margasiewicz/Snipshare.git
-git pull origin master
-cd <ścieżka do repozytorium>
+cd Snipshare
 ```
 #### Tworzenie wirtualnego środowiska
 ###### Windows
 ```bash
-py -m venv <venv_name>
+pip install virtualenv
+virtualenv myenv
 ```
 ###### Linux
 ```bash
-python3 -m venv <wybrana_nazwa>
+sudo apt-get install python-pip
+pip3 install virtualenv
+virtualenv myenv
 ```
 #### Aktywacja wirtualnego środowiska oraz instalacja potrzebnych bibliotek
 ###### Windows
 ```bash
-<wybrana_nazwa>\Scripts\activate.bat
-pip install -r requirements.txt
+myenv\Scripts\activate
+pip3 install -r requirements.txt
 ```
 ###### Linux
 ```bash
-source <wybrana_nazwa>/bin/activate
-pip install -r requirements
+source myenv/bin/activate
+pip3 install -r requirements
 ```
 #### Uruchomienie
 ```bash
-python3 <ścieżka_do>/run.py
+python3 run.py
 ```
 
