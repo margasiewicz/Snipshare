@@ -3,7 +3,7 @@ Repozytorium backendowe projektu zespołowego zespołu MAK
 #### Instalacja
 Klonowanie repozytorium i zapewnienie zgodności lokalnego mastera:
 ```bash
-git clone https://github.com/margasiewicz/flippery.git
+git clone https://github.com/margasiewicz/Snipshare.git
 git pull origin master
 cd <directory path>
 ```
@@ -27,3 +27,8 @@ pip install -r requirements.txt
 source <venv_name>/bin/activate
 pip install -r requirements
 ```
+#### Uruchomienie
+```bash
+python3 <ścieżka_do>/run.py
+```
+
