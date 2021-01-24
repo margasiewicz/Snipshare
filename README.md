@@ -9,7 +9,7 @@ cd Snipshare
 #### Tworzenie wirtualnego środowiska
 ###### Windows
 ```bash
-pip install virtualenv
+pip3 install virtualenv
 virtualenv myenv
 ```
 ###### Linux
