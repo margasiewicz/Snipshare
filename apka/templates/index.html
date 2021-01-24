@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="EN">
+<link href="{{ url_for('static', filename='css/main_style.css') }}" rel="stylesheet" type="text/css">
+  <head>
+
+		<meta charset="UTF-8">
+		<title>Snipshare Room Creator</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="main">
+        <div class="form-box">
+          <div class="button-box">
+            <button id="post-btn" type="submit" class="room-btn" title="Limited to one room creation per minute" onclick="clickTimeLimit();">Create room <span id = "timer"></span></button>
+                        
+          </div>
+          <div id="room">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+    Created by M.A.K. Group: &nbsp;&nbsp; Marcin Gasiewicz, Artur Jałocha, Kamil Radzymiński
+    </div>
+  </body>
+  <script type="text/javascript">
+  const button = document.getElementById('post-btn');
+
+  button.addEventListener('click', async _ => 
+  {
+  try {     
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function()
+      {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            var resp = JSON.parse(this.responseText);
+            var respcut = resp.roomname;
+            document.getElementById("room").innerHTML = respcut;
+        }
+      };
+    
+    request.open('POST', 'https://margasiewicz.pythonanywhere.com/room', true);
+    request.send();
+    } 
+    catch(err) 
+    {
+    console.error(`Error: ${err}`);
+    }
+  });
+  </script>
+  <script>
+  function clickTimeLimit()
+  {
+    document.getElementById("post-btn").textContent = "Disabled for: ";
+    document.getElementById("post-btn").style.background = "grey";
+    document.getElementById("post-btn").disabled = true;
+    setTimeout('document.getElementById("post-btn").style.background="#8B0000"',61000);
+    setTimeout('document.getElementById("post-btn").disabled=false;',61000);
+    setTimeout('document.getElementById("post-btn").textContent = "Create room"',61000);
+
+    var txt = "Disabled for: ";
+    var sec = 59;
+    var intervalId = setInterval(myTimer, 1000);
+    function myTimer()
+    {
+      document.getElementById("post-btn").innerHTML = txt + sec;
+      sec--;
+      if(sec == 0)
+      {
+        clearInterval(intervalId);
+      }
+    }
+  }
+</script>
+</html>
